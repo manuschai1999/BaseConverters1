@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#1E1E2E">
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BASE MASTER"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Binary • Octal • Decimal • Hex"
+        android:textColor="#00E5FF"
+        android:textSize="18sp"
+        android:layout_gravity="center"/>
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/base_master_logo"
+        android:contentDescription="Game Logo"/>
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:text="Start Game"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"/>
+
+    <LinearLayout
+        android:id="@+id/gameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+    <TextView
+        android:id="@+id/txtScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🏆 Score: 0"
+        android:textSize="22sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/txtLives"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="❤️ Lives: 3"
+        android:textSize="24sp"
+        android:textColor="#FF6B6B"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/txtTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="⏱️ 60"
+        android:textSize="24sp"
+        android:textColor="#FFD93D"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/txtInstruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Convert Base ? → Base ?"
+        android:textSize="20sp"
+        android:textColor="#00E5FF"
+        android:textStyle="bold"
+        android:paddingTop="20dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="12dp">
+
+        <TextView
+            android:id="@+id/txtQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Question"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="24dp"
+            android:textColor="#1E1E2E"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <EditText
+        android:id="@+id/edtAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="20dp"
+        android:hint="Enter Answer"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#AAAAAA"
+        android:backgroundTint="#00E5FF"/>
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="20dp"
+        android:text="ตอบ"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/txtGameOver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GAME OVER"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:textColor="#FF4444"
+        android:gravity="center"
+        android:visibility="gone"
+        android:paddingTop="30dp"/>
+
+    <Button
+        android:id="@+id/btnRestart"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="เล่นอีกครั้ง"
+        android:textSize="18sp"
+        android:visibility="gone"/>
+
+    </LinearLayout>
+
+</LinearLayout>
