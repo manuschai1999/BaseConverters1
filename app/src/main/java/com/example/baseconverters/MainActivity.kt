@@ -18,22 +18,18 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnStart: Button
     private lateinit var gameLayout: LinearLayout
     private lateinit var txtTitle: TextView
-
     private lateinit var txtQuestion: TextView
     private lateinit var txtScore: TextView
     private lateinit var txtLives: TextView
     private lateinit var txtTimer: TextView
-
     private lateinit var txtInstruction: TextView
-
     private lateinit var edtAnswer: EditText
     private lateinit var btnSubmit: Button
     private lateinit var btnRestart: Button
     private lateinit var txtGameOver: TextView
     private lateinit var imgLogo: ImageView
-
     private var questionTime = 60000L
-
+    private lateinit var btnHome: Button
     private var timer: CountDownTimer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,12 +48,13 @@ class MainActivity : AppCompatActivity() {
         edtAnswer = findViewById(R.id.edtAnswer)
         btnSubmit = findViewById(R.id.btnSubmit)
         btnRestart = findViewById(R.id.btnRestart)
+        btnHome = findViewById(R.id.btnHome)
         txtGameOver = findViewById(R.id.txtGameOver)
         imgLogo = findViewById(R.id.imgLogo)
 
         gameManager = GameManager()
 
-        loadQuestion()
+        updateUI()
 
         btnSubmit.setOnClickListener {
 
@@ -100,11 +97,15 @@ class MainActivity : AppCompatActivity() {
 
                 showGameOver()
             }
+         else {
+
+            loadQuestion()
+        }
 
         }
         btnRestart.setOnClickListener {
 
-            recreate()
+            restartGame()
         }
         btnStart.setOnClickListener {
 
@@ -114,7 +115,13 @@ class MainActivity : AppCompatActivity() {
 
             gameLayout.visibility = View.VISIBLE
 
+            btnSubmit.isEnabled = true
+            edtAnswer.isEnabled = true
+
             loadQuestion()
+        }
+        btnHome.setOnClickListener {
+            goHome()
         }
     }
 
@@ -190,12 +197,60 @@ class MainActivity : AppCompatActivity() {
 
         btnRestart.visibility = View.VISIBLE
 
+        btnHome.visibility = View.VISIBLE
+
         btnSubmit.isEnabled = false
 
         edtAnswer.isEnabled = false
 
         txtGameOver.text =
             "GAME OVER\nScore : ${gameManager.player.score}"
+    }
+    private fun restartGame() {
+
+        timer?.cancel()
+
+        gameManager = GameManager()
+
+        questionTime = 60000L
+
+        updateUI()
+
+        txtGameOver.visibility = View.GONE
+
+        btnRestart.visibility = View.GONE
+
+        btnHome.visibility = View.GONE
+
+        btnSubmit.isEnabled = true
+
+        edtAnswer.isEnabled = true
+
+        loadQuestion()
+    }
+    private fun goHome() {
+
+        timer?.cancel()
+
+        gameManager = GameManager()
+
+        questionTime = 60000L
+
+        txtGameOver.visibility = View.GONE
+
+        btnRestart.visibility = View.GONE
+        btnHome.visibility = View.GONE
+
+        btnSubmit.isEnabled = true
+        edtAnswer.isEnabled = true
+
+        gameLayout.visibility = View.GONE
+
+        btnStart.visibility = View.VISIBLE
+        txtTitle.visibility = View.VISIBLE
+        imgLogo.visibility = View.VISIBLE
+
+        updateUI()
     }
 
 }

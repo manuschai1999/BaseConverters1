@@ -11,11 +11,12 @@
         android:id="@+id/txtTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
         android:text="BASE MASTER"
-        android:textSize="36sp"
-        android:textStyle="bold"
         android:textColor="#FFFFFF"
-        android:layout_gravity="center"/>
+        android:textSize="36sp"
+        android:textStyle="bold"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -23,14 +24,15 @@
         android:text="Binary • Octal • Decimal • Hex"
         android:textColor="#00E5FF"
         android:textSize="18sp"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:layout_marginTop="12dp"/>
 
     <ImageView
         android:id="@+id/imgLogo"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="35dp"
         android:layout_marginBottom="20dp"
         android:src="@drawable/base_master_logo"
         android:contentDescription="Game Logo"/>
@@ -41,12 +43,13 @@
         android:layout_height="60dp"
         android:text="Start Game"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="25dp"/>
 
     <LinearLayout
         android:id="@+id/gameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
         android:orientation="vertical"
         android:visibility="gone">
 
@@ -57,7 +60,8 @@
         android:text="🏆 Score: 0"
         android:textSize="22sp"
         android:textColor="#FFFFFF"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:layout_marginBottom="6dp"/>
 
     <TextView
         android:id="@+id/txtLives"
@@ -66,7 +70,8 @@
         android:text="❤️ Lives: 3"
         android:textSize="24sp"
         android:textColor="#FF6B6B"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:layout_marginBottom="6dp"/>
 
     <TextView
         android:id="@+id/txtTimer"
@@ -75,17 +80,18 @@
         android:text="⏱️ 60"
         android:textSize="24sp"
         android:textColor="#FFD93D"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"/>
 
     <TextView
         android:id="@+id/txtInstruction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Convert Base ? → Base ?"
+        android:text="Convert ฺBase ? → Base ?"
         android:textSize="20sp"
         android:textColor="#00E5FF"
         android:textStyle="bold"
-        android:paddingTop="20dp"/>
+        android:layout_marginTop="10dp"/>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -131,7 +137,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="GAME OVER"
-        android:textSize="36sp"
+        android:textSize="32sp"
         android:textStyle="bold"
         android:textColor="#FF4444"
         android:gravity="center"
@@ -145,6 +151,16 @@
         android:text="เล่นอีกครั้ง"
         android:textSize="18sp"
         android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/btnHome"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="10dp"
+            android:text="หน้าแรก"
+            android:textSize="18sp"
+            android:visibility="gone"/>
+
 
     </LinearLayout>
 
